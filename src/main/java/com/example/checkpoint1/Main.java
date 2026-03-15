@@ -47,13 +47,36 @@ public class Main {
             tx.begin();
 
             System.out.println("-- SQL (simulado) antes do persist: " + TabelaFuncionarios.gerarInsert(f1));
-            em.persist(f1); 
+
+
+
+
+            System.out.println("\n-> Testando CREATE...");
+            em.persist(f1);
+
+
+            System.out.println("-> Testando READ...");
+            Funcionario busca = em.find(Funcionario.class, f1.getId());
+            System.out.println("   Encontrado no banco: " + busca.getNome() + " com valor hora de: " + busca.getValorPorHora());
+
+
+            System.out.println("-> Testando UPDATE...");
+            busca.setValorPorHora(55.0);
+            em.merge(busca);
+
+
+            System.out.println("-> Testando DELETE...");
+            em.remove(busca);
+
+
             tx.commit();
-            em.close();
-            System.out.println("Operação JPA (persist) executada (ou tentada). Veja logs do provedor para SQL real se configurado.");
+            em.close();  
+
+            System.out.println("\nOperações JPA (CRUD completo) executadas. Veja os logs acima para confirmar os SQLs reais gerados pelo Hibernate.");
+
         } catch (Exception e) {
             System.out.println("(Aviso) Não foi possível executar operações JPA aqui — verifique persistence.xml e driver do Oracle.\nMensagem: " + e.getMessage());
-            System.out.println("Como alternativa, mostramos as strings SQL geradas pelo programa acima (que você pode usar para executar no SQL Developer)."); 
+            System.out.println("Como alternativa, mostramos as strings SQL geradas pelo programa acima (que você pode usar para executar no SQL Developer).");
         }
 
         System.out.println("\n=== Fim da demonstração ===");
