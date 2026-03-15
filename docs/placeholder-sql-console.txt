@@ -1,2 +1,0 @@
-Aqui você pode colar prints do console mostrando o SQL gerado e as execuções no Oracle SQL Developer.
-Substitua por imagens na pasta docs/ e faça commit no GitHub.
