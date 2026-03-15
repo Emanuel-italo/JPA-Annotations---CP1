@@ -1,0 +1,3 @@
+Aluno A - RM000000
+Aluno B - RM000001
+(Edite este arquivo com os nomes/RMs reais do grupo antes de enviar ao professor)
