@@ -16,7 +16,7 @@ public class Estagiario extends Funcionario {
 
     @Override
     public double calcularSalario() {
-        // estagiário recebe 50% do valor por hora nesta implementação didática
+  
         return getHorasTrabalhadas() * getValorPorHora() * 0.5;
     }
 

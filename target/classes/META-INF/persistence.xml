@@ -2,26 +2,25 @@
 <persistence version="3.0" xmlns="https://jakarta.ee/xml/ns/persistence">
   <persistence-unit name="checkpointPU" transaction-type="RESOURCE_LOCAL">
     <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-    <!-- Mapeie suas classes (opcional - Hibernate pode escanear) -->
+ 
     <class>com.example.checkpoint1.model.Funcionario</class>
     <class>com.example.checkpoint1.model.FuncionarioSenior</class>
     <class>com.example.checkpoint1.model.Estagiario</class>
     <class>com.example.checkpoint1.model.FuncionarioPartTime</class>
 
     <properties>
-      <!-- Substitua estes valores para conectar ao Oracle local -->
-      <!-- Exemplo: jdbc:oracle:thin:@localhost:1521:ORCL -->
+
+      <property name="hibernate.hbm2ddl.auto" value="create"/>
       <property name="jakarta.persistence.jdbc.url" value="jdbc:oracle:thin:@oracle.fiap.com.br:1521:ORCL"/>
       <property name="jakarta.persistence.jdbc.user" value="rm561337"/>
       <property name="jakarta.persistence.jdbc.password" value="280201"/>
-      <property name="jakarta.persistence.jdbc.driver" value="jdbc:oracle:thin:@oracle.fiap.com.br:1521:ORCL"/>
+      <property name="jakarta.persistence.jdbc.driver" value="oracle.jdbc.OracleDriver"/>
 
-      <!-- Propriedades Hibernate -->
-      <property name="hibernate.dialect" value="org.hibernate.dialect.Oracle12cDialect"/>
+  
+      <property name="hibernate.dialect" value="org.hibernate.dialect.OracleDialect"/>
       <property name="hibernate.show_sql" value="true"/>
       <property name="hibernate.format_sql" value="true"/>
-      <!-- Se desejar que o Hibernate crie tabelas automaticamente (apenas para testes): -->
-      <!-- <property name="hibernate.hbm2ddl.auto" value="update"/> -->
+    
 
     </properties>
   </persistence-unit>

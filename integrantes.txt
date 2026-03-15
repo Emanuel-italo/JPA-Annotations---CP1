@@ -1,3 +1,8 @@
-Aluno A - RM000000
-Aluno B - RM000001
-(Edite este arquivo com os nomes/RMs reais do grupo antes de enviar ao professor)
+Nome: Emanuel Italo Leal Trindade Soares
+RM: 561337
+
+Nome: Gabriel Bebé Silva
+RM: 562012
+
+Nome: Paulo Henrique Alves Estalise de Oliveira
+RM: 563811

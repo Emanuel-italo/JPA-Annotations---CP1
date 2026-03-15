@@ -8,15 +8,17 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-
+import jakarta.persistence.Inheritance;
+import jakarta.persistence.InheritanceType;
 
 @Entity
+@Inheritance(strategy = InheritanceType.JOINED) 
 @Descricao(descricao = "funcionarios")
 @Table(name = "FUNCIONARIOS")
 public class Funcionario {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Coluna(nome = "id", tipo = "NUMBER")
     private Long id;
 
@@ -31,7 +33,7 @@ public class Funcionario {
 
    
     public Funcionario() {
-       
+        
     }
 
     public Funcionario(String nome, int horasTrabalhadas, double valorPorHora) {
@@ -40,7 +42,7 @@ public class Funcionario {
         this.valorPorHora = valorPorHora;
     }
 
-    // Getters / Setters (simples)
+
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
 
@@ -53,12 +55,12 @@ public class Funcionario {
     public double getValorPorHora() { return valorPorHora; }
     public void setValorPorHora(double valorPorHora) { this.valorPorHora = valorPorHora; }
 
-    
+  
     public double calcularSalario() {
         return horasTrabalhadas * valorPorHora;
     }
 
-
+  
     public String imprimirInformacao() {
         return String.format("Funcionario[id=%s, nome=%s, horas=%d, valorHora=%.2f, salario=%.2f]",
                 id, nome, horasTrabalhadas, valorPorHora, calcularSalario());

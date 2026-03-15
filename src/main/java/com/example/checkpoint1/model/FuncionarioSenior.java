@@ -3,6 +3,7 @@ package com.example.checkpoint1.model;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 
+
 @Entity
 @Table(name = "FUNCIONARIOS_SENIOR")
 public class FuncionarioSenior extends Funcionario {
