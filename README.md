@@ -1,8 +1,8 @@
-# Checkpoint 1 - Java Advanced (modo aluno)
+# Checkpoint 1 - Java Advanced 
 
-**Descrição rápida (aluno):**
+**Descrição**
 
-Projeto de exemplo para o Checkpoint 1 da disciplina Java Advanced. Contém as classes pedidas (Funcionario, FuncionarioSenior e outras subclasses criativas), anotações personalizadas (@Descricao e @Coluna), geração de SQL via Reflection e integração conceitual com JPA/Hibernate.
+Projeto | Checkpoint 1 da disciplina Java Advanced. Contém as classes pedidas (Funcionario, FuncionarioSenior e outras subclasses criativas), anotações personalizadas (@Descricao e @Coluna), geração de SQL via Reflection e integração conceitual com JPA/Hibernate.
 
 
 ---
@@ -15,7 +15,7 @@ Projeto de exemplo para o Checkpoint 1 da disciplina Java Advanced. Contém as c
 - `docs/` - imagens de exemplo / placeholders
 - `integrantes.txt` - arquivo com nomes/RMs (substitua pelos membros do grupo)
 
-## Como configurar (passo-a-passo) - aluno explicando
+## Como configurar
 
 1. **Configurar o Oracle JDBC driver**
    - O driver JDBC da Oracle não é embutido por licença. Baixe o `ojdbc8.jar` ou similar no site da Oracle.
@@ -25,21 +25,13 @@ Projeto de exemplo para o Checkpoint 1 da disciplina Java Advanced. Contém as c
    - Abra `src/main/resources/META-INF/persistence.xml` e substitua `<HOST>`, `<PORT>`, `<SERVICE>`, `<USERNAME>` e `<PASSWORD>` pelos valores do seu Oracle/SQL Developer.
    - Exemplo de URL: `jdbc:oracle:thin:@//localhost:1521/ORCLPDB1`.
 
-3. **Rodar no IDE (IntelliJ recomendado)**
-   - Importar como projeto Maven.
-   - Certificar-se de que o driver Oracle foi adicionado como library.
-   - Rodar `Main.java`.
 
-4. **Verificar os SQLs gerados**
+
+3. **Verificar os SQLs gerados**
    - O programa imprime as strings SQL geradas via Reflection (SELECT, INSERT, UPDATE, DELETE).
    - Se o `persistence.xml` estiver configurado e o Oracle disponível, o Hibernate também exibirá o SQL no console (propriedade `hibernate.show_sql` está ativada).
 
-## Observações do estudante (pequenas dúvidas / possíveis melhorias)
 
-- Usei um bônus fixo de R$100 por bloco de 15 horas para `FuncionarioSenior`. Poderia ser uma porcentagem ou uma propriedade configurável.
-- Para produção eu usaria `BigDecimal` ao invés de `double` para valores monetários.
-- A geração de SQL via Reflection aqui é didática e **não é segura** contra SQL Injection — não usar em produção sem parametrização.
-- Poderíamos melhorar detectando o campo `@Id` dinamicamente (aqui assumimos `id`) e usando PreparedStatements.
 
 ## Como testar (o que o `Main` faz)
 
@@ -64,8 +56,3 @@ Projeto de exemplo para o Checkpoint 1 da disciplina Java Advanced. Contém as c
 - [x] `docs/` com placeholders e instruções para inserir prints reais
 - [x] Arquivo `.zip` pronto para envio (este arquivo que você recebeu)
 
----
-
-Se quiser, eu já envio o .zip do projeto aqui (está anexo). Se precisar que eu preencha `integrantes.txt` com nomes e RMs reais, cole-os aqui e eu os insiro no arquivo e reenvio o .zip.
-
-Boa sorte! \n(Comentário do aluno: me avise se quiser que eu transforme as strings SQL em PreparedStatements para segurança.)
