@@ -1,0 +1,3 @@
+Link para clonar: https://github.com/Emanuel-italo/JPA-Annotations---CP1.git
+
+Link projeto: https://github.com/Emanuel-italo/JPA-Annotations---CP1
