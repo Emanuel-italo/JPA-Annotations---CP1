@@ -42,24 +42,21 @@ public class Main {
 
             System.out.println("-- SQL (simulado) antes do persist: " + TabelaFuncionarios.gerarInsert(f1));
 
-            // 1. CREATE (Inserindo TODOS no banco de dados)
-            System.out.println("\n-> Testando CREATE...");
-            em.persist(f1); // Salva Alice
-            em.persist(f2); // Salva Bruno
-            em.persist(f3); // Salva Carla
-            em.persist(f4); // Salva Diego
 
-            // 2. READ (Buscando apenas a Alice para testar a leitura)
+            System.out.println("\n-> Testando CREATE...");
+            em.persist(f1);
+            em.persist(f2);
+            em.persist(f3);
+            em.persist(f4);
+
             System.out.println("-> Testando READ...");
             Funcionario busca = em.find(Funcionario.class, f1.getId());
             System.out.println("   Encontrado no banco: " + busca.getNome() + " com valor hora de: " + busca.getValorPorHora());
 
-            // 3. UPDATE (Aumentando o valor da hora da Alice)
-            System.out.println("-> Testando UPDATE...");
+           System.out.println("-> Testando UPDATE...");
             busca.setValorPorHora(55.0);
             em.merge(busca);
 
-            // 4. DELETE (Deletando o Diego)
             System.out.println("-> Testando DELETE...");
             Funcionario buscaDiego = em.find(Funcionario.class, f4.getId());
             em.remove(buscaDiego);
